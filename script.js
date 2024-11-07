@@ -1,4 +1,4 @@
-// SET computer choice to random choice of rock, paper or scissor
+// SET computer choice to random choice of rock, paper or scissors
 function getComputerChoice() {
     switch (Math.floor(Math.random() * 3)) {
         case 0:
