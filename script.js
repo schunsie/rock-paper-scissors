@@ -31,11 +31,6 @@ function getHumanChoice() {
     }
 }
 
-
-
-
-
-
 function playGame () {
     // Init game variables
     let games = 0;    
