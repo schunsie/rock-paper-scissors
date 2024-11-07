@@ -1,5 +1,9 @@
 console.log("Hello, world!");
 
+// INIT game variables
+let humanScore = 0;
+let computerScore = 0;
+
 // SET computer choice to random choice of rock, paper or scissor
 function getComputerChoice() {
     switch (Math.floor(Math.random() * 3)) {
@@ -32,4 +36,6 @@ function getHumanChoice() {
         }
     }
 }
+
+
 
