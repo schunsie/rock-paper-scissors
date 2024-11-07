@@ -1,5 +1,3 @@
-console.log("Hello, world!");
-
 // INIT game variables
 let humanScore = 0;
 let computerScore = 0;
@@ -40,26 +38,14 @@ function getHumanChoice() {
 // Determine winner
 function playRound (humanChoice, computerChoice) {
     let humanWin;
-    if (humanChoice == 'Rock') {
-        if (computerChoice == 'Paper') {
-            humanWin = false;
-        } else if (computerChoice == 'Scissors') {
-            humanWin = true;
-        } 
-    } else if (humanChoice == 'Paper') {
-        if (computerChoice == 'Scissors') {
-            humanWin = false;
-        } else if (computerChoice == 'Rock') {
-            humanWin = true;
-        }
-    } else if (humanChoice == 'Scissors') {
-        if (computerChoice == 'Rock') {
-            humanWin = false;
-        } else if (computerChoice == 'Rock') {
-            humanWin = true;
-        }
+    if (humanChoice == 'Rock' && computerChoice != 'Rock') {
+        computerChoice == 'Paper' ? humanWin = true : humanWin = false;
+    } else if (humanChoice == 'Paper' && computerChoice != 'Paper') {
+        computerChoice == 'Rock' ? humanWin = true : humanWin = false;
+    } else if (humanChoice == 'Scissors' && computerChoice != 'Scissors') {
+        computerChoice == 'Paper' ? humanWin = true : humanWin = false;
     }
-    displayRoundWinner(humanWin, humanChoice, computerChoice)
+    displayRoundWinner(humanWin, humanChoice, computerChoice);
 }
 
 // Display and track winner
