@@ -54,8 +54,12 @@ h2 {
 
 #result {
     font-size: 1.5rem;
-    min-height: 3rem;
-    text-align: center;
+    min-height: 5rem;
     padding: 0.5rem;
     color: rgba(145, 216, 221, 0.267);
+    text-align: center;
+}
+
+.activeRed {
+    color: hsl(4, 76%, 70%)
 }
