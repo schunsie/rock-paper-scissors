@@ -2,10 +2,12 @@ const buttons = document.querySelector('.player-options');
 let playerScore = 0;
 let computerScore = 0;
 
-buttons.addEventListener('click', (e) => {
+buttons.addEventListener('click', getPlayerChoice);
+
+function getPlayerChoice(e) {
     let target = e.target;
     let playerChoice = target.classList[0];
-    target.classList.toggle('active')
+    target.classList.toggle('active');
     setTimeout(() => {
         target.classList.toggle('active');
     }, 1000);
@@ -14,7 +16,7 @@ buttons.addEventListener('click', (e) => {
     if (validateChoice(playerChoice)) {
         playRound(playerChoice);
     }
-});
+}
 
 function validateChoice(choice) {
     if (choice == 'rock'
@@ -46,6 +48,11 @@ function playRound(playerChoice) {
     const score = document.querySelector('#score');
     score.textContent = `${playerScore} - ${computerScore}`;
 
+    if (playerScore >= 5 || computerScore >= 5) {
+        buttons.removeEventListener('click', getPlayerChoice);
+        displayGameWinner(playerScore > computerScore ? 'player' : 'computer');
+    }
+
 }
 
 function getComputerChoice() {
@@ -54,7 +61,7 @@ function getComputerChoice() {
     const computerChoice = choices[index];
     
     const choiceIcon = document.querySelector(`.computer-options .${computerChoice}`);
-    choiceIcon.classList.toggle('activeRed')
+    choiceIcon.classList.toggle('activeRed');
     setTimeout(() => {
         choiceIcon.classList.toggle('activeRed');
     }, 1000);
@@ -73,5 +80,18 @@ function determineWinner(playerChoice, computerChoice) {
             return computerChoice == 'rock' ? 'player' : 'computer';
         case 'scissors':
             return computerChoice == 'paper' ? 'player' : 'computer';
+    }
+}
+
+function displayGameWinner(winner) {
+    const result = document.querySelector('#result');
+
+    switch (winner) {
+        case 'player':
+            result.textContent = 'Congratulations, you\'ve won the game!';
+            break;
+        case 'computer':
+            result.textContent = 'The computer has won the game!';
+            break;
     }
 }
