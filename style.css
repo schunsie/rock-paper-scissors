@@ -47,7 +47,8 @@ h2 {
     color: hsla(211, 76%, 92%, 0.678);
 }
 
-.player-options button:hover {
+.player-options button:hover,
+.active {
     color: hsl(199, 77%, 70%)
 }
 
