@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Sour Gummy',sans-serif;
+}
+
+body {
+    background-color: hsl(249, 41%, 7%);
+    color: white;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h2 {
+    font-size: 2.5rem;
+}
+
+.container {
+    font-size: 2rem;
+    border: hsl(255, 10%, 50%) solid 3px;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    background-color: hsl(252, 15%, 20%);
+    box-shadow: 0rem 1rem 1rem 1rem black;
+    width: 25%;
+    min-width: 20rem;
+}
+
+.player-options,
+.computer-options {
+    display: flex;
+    justify-content: space-around;
+    gap: 1rem;
+}
+
+.player-options > *,
+.computer-options > * {
+    font-size: 5rem;
+    background: none;
+    border: none;
+    color: hsla(211, 76%, 92%, 0.678);
+}
+
+.player-options button:hover {
+    color: hsl(199, 77%, 70%)
+}
+
+#result {
+    font-size: 1.5rem;
+    min-height: 3rem;
+    text-align: center;
+    padding: 0.5rem;
+    color: rgba(145, 216, 221, 0.267);
+}
